@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Paul's Calendar</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: rgb(46, 52, 54)</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QWidget" name="clockWidget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>181</width>
+          <height>111</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>171</height>
+         </size>
+        </property>
+        <widget class="QLCDNumber" name="lcdTens">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>20</y>
+           <width>41</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+         <property name="digitCount">
+          <number>1</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
+         <property name="intValue" stdset="0">
+          <number>0</number>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdHour">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>81</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+         <property name="digitCount">
+          <number>2</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
+         <property name="intValue" stdset="0">
+          <number>12</number>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdones">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>20</y>
+           <width>41</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+         <property name="digitCount">
+          <number>1</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
+         <property name="intValue" stdset="0">
+          <number>0</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="clockcolon">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>-10</y>
+           <width>31</width>
+           <height>111</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Liberation Mono</family>
+           <pointsize>44</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>:</string>
+         </property>
+        </widget>
+        <zorder>lcdHour</zorder>
+        <zorder>lcdones</zorder>
+        <zorder>clockcolon</zorder>
+        <zorder>lcdTens</zorder>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QFrame" name="nextVisitFrame">
+        <property name="minimumSize">
+         <size>
+          <width>141</width>
+          <height>171</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>151</width>
+          <height>171</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QGraphicsView" name="nextVisitGraphics">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>141</width>
+           <height>150</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="visitlabel">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Paul's Next Visit:</string>
+         </property>
+        </widget>
+        <zorder>visitlabel</zorder>
+        <zorder>nextVisitGraphics</zorder>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QWidget" name="day1" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>129</width>
+          <height>371</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(255, 0, 0);</string>
+        </property>
+        <widget class="QGraphicsView" name="calview1">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>141</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="daylabel1">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Monday</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="day2" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>129</width>
+          <height>371</height>
+         </size>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>238</red>
+              <green>238</green>
+              <blue>236</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>238</red>
+              <green>238</green>
+              <blue>236</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>238</red>
+              <green>238</green>
+              <blue>236</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>238</red>
+              <green>238</green>
+              <blue>236</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>190</red>
+              <green>190</green>
+              <blue>190</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>190</red>
+              <green>190</green>
+              <blue>190</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>190</red>
+              <green>190</green>
+              <blue>190</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>46</red>
+              <green>52</green>
+              <blue>54</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(255, 0, 0);</string>
+        </property>
+        <widget class="QLabel" name="daylabel2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Tuesday</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QGraphicsView" name="calview2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>141</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="day3" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>129</width>
+          <height>371</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(255, 0, 0);</string>
+        </property>
+        <widget class="QLabel" name="daylabel3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Wednesday</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QGraphicsView" name="calview3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>141</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255);</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="day4" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>129</width>
+          <height>371</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(255, 0, 0);</string>
+        </property>
+        <widget class="QLabel" name="daylabel4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Thursday</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QGraphicsView" name="calview4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>141</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="day5" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>129</width>
+          <height>371</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(255, 0, 0);</string>
+        </property>
+        <widget class="QLabel" name="daylabel5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Friday</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QGraphicsView" name="calview5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>141</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="day6" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>129</width>
+          <height>371</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(255, 0, 0);</string>
+        </property>
+        <widget class="QLabel" name="daylabel6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Satuday</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QGraphicsView" name="calview6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>141</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="day7" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>129</width>
+          <height>371</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: rgb(255, 0, 0);</string>
+        </property>
+        <widget class="QLabel" name="daylabel7">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>141</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgb(114, 159, 207); color: rgb(239, 41, 41)</string>
+         </property>
+         <property name="text">
+          <string>Sunday</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QGraphicsView" name="calview7">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>141</width>
+           <height>341</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(255, 255, 255)</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>nextVisitGraphics</tabstop>
+  <tabstop>calview1</tabstop>
+  <tabstop>calview2</tabstop>
+  <tabstop>calview3</tabstop>
+  <tabstop>calview4</tabstop>
+  <tabstop>calview5</tabstop>
+  <tabstop>calview6</tabstop>
+  <tabstop>calview7</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
