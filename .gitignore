@@ -2,4 +2,7 @@
 credentials.json
 token.pickle
 .DS_Store
-
+__pycache__/*
+*.swp
+.idea/*
+Icon
